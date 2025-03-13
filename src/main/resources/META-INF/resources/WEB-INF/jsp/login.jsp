@@ -5,11 +5,14 @@
 		</title>
 	</head>
 	<body>
-	<div>login</div>
-	<input></input></br>
-	</br>
-	<input></input></br>
-	</br>
-	<button>login</button>
+	<div>login </div>
+	<pre>${errorMessage}</pre>
+	<form method="post">
+		Name : <input type="text" name="name"></br>
+		</br>
+		Password<input type="password" name="password"></br>
+		</br>
+		<input type="submit">
+	</form>
 	</body>
 </html>
