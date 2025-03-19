@@ -1,12 +1,15 @@
 <html>
 	<head>
+	<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 		<title>
 			Login Page
 		</title>
 	</head>
 	<body>
-	<div>login </div>
+	<div class="container">
+	<h1>login </h1>
 	<pre>${errorMessage}</pre>
+	
 	<form method="post">
 		Name : <input type="text" name="name"></br>
 		</br>
@@ -14,5 +17,6 @@
 		</br>
 		<input type="submit">
 	</form>
+	</div>
 	</body>
 </html>
