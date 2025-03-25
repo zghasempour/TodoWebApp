@@ -9,7 +9,7 @@
 	<div class="container">
 	<h1>Welcome ${name}</h1>
 	<hr>
-	<div><a href="todo_list">Manage</a> Your Tasks</div>
+	<div><a href="todo-list">Manage</a> Your Tasks</div>
 	</div>
 	</body>
 </html>
