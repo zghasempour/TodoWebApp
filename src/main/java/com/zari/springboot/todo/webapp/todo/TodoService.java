@@ -18,7 +18,9 @@ public class TodoService {
 		todos.add(new Todo(++todoId, "Zahra", "Learning Flutter", LocalDate.now().plusYears(3),false));
 	}
 	public List<Todo> findByUsername(String name){
-		return todos;
+		Predicate<? super Todo> predicate = todo -> todo.getUsername().equalsIgnoreCase(name);
+		return todos.stream().filter(predicate).toList();
+
 	}
 	
 	public void addTodo(String username, String description, LocalDate targetDate, boolean isDone)
@@ -27,10 +29,20 @@ public class TodoService {
 		todos.add(todo);
 	}
 
-	public void deleteTodo(int id) {
+	public void deleteById(int id) {
 		Predicate<? super Todo> predicate = todo -> todo.getId() == id;
 		todos.removeIf(predicate);
 		
 	}
-	
+
+	public void updateTodo(Todo todo) {
+		deleteById(todo.getId());
+		todos.add(todo);
+	}
+
+	public Todo findById(int id) {
+		Predicate<? super Todo> predicate = todo -> todo.getId() == id;
+		Todo todo = todos.stream().filter(predicate).findFirst().get();
+		return todo;
+	}
 }
